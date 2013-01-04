@@ -1,0 +1,11 @@
+enyo.depends(
+    "$lib/layout",
+    "$lib/mvc",
+    "$lib/localstorage/backbone.localStorage.js",
+    "css",
+    "models",
+    "views",
+    "controllers",
+    "TodoMVCApp.js",
+    "start.js"
+);
