@@ -1,1 +1,3 @@
-enyo.depends();
+enyo.depends(
+	"TodosController.js"
+);
