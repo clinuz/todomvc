@@ -4,6 +4,7 @@ enyo.depends(
     "$lib/localstorage/backbone.localStorage.js",
     "css",
     "models",
+    "routers",
     "views",
     "controllers",
     "TodoMVCApp.js",

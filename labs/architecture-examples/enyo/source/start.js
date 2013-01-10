@@ -1,3 +1,4 @@
 enyo.ready(function () {
-    window.app = new TodoMVC.Application();
+    new TodoMVC.Application({name: "TodoMVC.app"});
+    Backbone.history.start();
 });

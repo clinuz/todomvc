@@ -1,3 +1,3 @@
 enyo.depends(
-	"TodoMVC.css"
+	"router.js"
 );

@@ -14,7 +14,8 @@ var TodoMVC = TodoMVC || {};
 		model: TodoMVC.Todo,
 
 		// Save all of the todo items under the `"todos"` namespace.
-		localStorage: new Backbone.LocalStorage('todos-enyo'),
+		//localStorage: new Backbone.LocalStorage('todos-enyo'),
+		localStorage: new Store('todos-enyo'),
 
 		// Filter down the list of all todo items that are finished.
 		completed: function() {
