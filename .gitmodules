@@ -1,12 +1,12 @@
 [submodule "labs/architecture-examples/enyo/enyo"]
 	path = labs/architecture-examples/enyo/enyo
-	url = https://github.com/clinuz/enyo.git
+	url = https://github.com/graynorton/enyo.git
 [submodule "labs/architecture-examples/enyo/lib/localstorage"]
 	path = labs/architecture-examples/enyo/lib/localstorage
 	url = https://github.com/jeromegn/Backbone.localStorage.git
 [submodule "labs/architecture-examples/enyo/lib/mvc"]
 	path = labs/architecture-examples/enyo/lib/mvc
-	url = https://github.com/clinuz/mvc.git
+	url = https://github.com/graynorton/mvc.git
 [submodule "labs/architecture-examples/enyo/lib/layout"]
 	path = labs/architecture-examples/enyo/lib/layout
 	url = https://github.com/enyojs/layout.git
