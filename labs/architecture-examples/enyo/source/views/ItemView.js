@@ -5,19 +5,18 @@ enyo.kind({
 	tag: "li",
 	completed: null,
 	bindings: [
-		{from: "controller.title", to: "$.label.content"},
-		{from: "controller.title", to: "$.edit.value", oneWay: false},
-		{from: "controller.completed", to: "$.checkbox.checked", oneWay: false},
 		{from: "controller.completed", to: "completed"},
 		{from: "controller.editing", to: "editing"}
 	],
 	components: [
 		{classes: "view", components: [
-			{name: "checkbox", kind: "enyo.Checkbox", classes: "toggle"},
-			{name: "label", tag: "label", ondblclick: "startEditing"},
+			{name: "checkbox", kind: "enyo.Checkbox", classes: "toggle",
+			    bindFrom: ".completed", bindTo: ".checked", bindOneWay: false},
+			{name: "label", tag: "label", ondblclick: "startEditing", bindFrom: ".title"},
 			{kind: "enyo.Button", classes: "destroy", ontap: "destroyItem"}
 		]},
-		{name: "edit", kind: "enyo.Input", classes: "edit", selectOnFocus: true, onblur: "stopEditing", onkeypress: "blurOnEnter"}
+		{name: "edit", kind: "enyo.Input", classes: "edit", selectOnFocus: true,
+		    onblur: "stopEditing", onkeypress: "blurOnEnter", bindFrom: ".title", bindTo: ".value"}
 	],
 	setItemClass: enyo.Observer(function() {
 		this.addRemoveClass("completed", this.completed);
