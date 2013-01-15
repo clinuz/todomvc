@@ -1,1 +1,10 @@
 
+[submodule "labs/architecture-examples/enyo/enyo"]
+	path = labs/architecture-examples/enyo/enyo
+	url = git://github.com/clinuz/enyo.git
+[submodule "labs/architecture-examples/enyo/lib/mvc"]
+	path = labs/architecture-examples/enyo/lib/mvc
+	url = git://github.com/clinuz/mvc.git
+[submodule "labs/architecture-examples/enyo/lib/layout"]
+	path = labs/architecture-examples/enyo/lib/layout
+	url = git://github.com/enyojs/layout.git
