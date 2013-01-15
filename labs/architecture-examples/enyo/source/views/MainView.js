@@ -4,9 +4,8 @@ enyo.kind({
 	tag: "section",
 	id: "main",
 	bindings: [
-		//{from: "TodoMVC.app.masterToggle", to: "$.toggle.checked", oneWay: false},
 		{from: "TodoMVC.todosController.all", to: "$.toggle.showing"},
-		{from: "TodoMVC.todosController.active", to: "active"}
+		{from: "TodoMVC.todosController.active", to: ".$.toggle.checked", transform: "activeTransform"}
 	],
 	components: [
 		{name: "toggle", kind: "enyo.Checkbox", id: "toggle-all", ontap: "toggleTap"},
@@ -29,11 +28,17 @@ enyo.kind({
 			TodoMVC.todosController.setCompletedForAll(this.$.toggle.checked);
 		});
 	},
-	activeChanged: function(inPrev) {
-		var toggle = this.$.toggle;
-		var active = this.get("active");
-		if (active && !inPrev || inPrev && !active) {
-			toggle.set("checked", !active);
-		}
+	activeTransform: function (value, direction, binding) {
+        // this test-case will not allow it to propagate the value
+        // if it is already set correctly
+	    var cur = this.$.toggle.get("checked");
+        if (value && !cur) binding.stop();
+        else if (value && cur) return false;
+        else if (cur) binding.stop();
+        else return true;
+        // the following would have worked with the same effect
+        // and would appear simpler but less precise
+        // if (value) return false
+        // else return true
 	}
 });
