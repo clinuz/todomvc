@@ -1,5 +1,5 @@
 enyo.depends(
-	"ItemViewController.js",
+	"ModelController.js",
 	"TodosController.js",
 	"TodoRepeaterController.js"
 );

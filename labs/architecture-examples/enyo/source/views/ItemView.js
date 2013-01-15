@@ -1,12 +1,11 @@
 enyo.kind({
 	name: "TodoMVC.ItemView",
 	kind: "enyo.View",
-	controller: "TodoMVC.ItemViewController",
 	tag: "li",
 	completed: null,
 	bindings: [
-		{from: "controller.completed", to: "completed"},
-		{from: "controller.editing", to: "editing"}
+		{from: ".controller.completed", to: ".completed"},
+		{from: ".controller.editing", to: ".editing"}
 	],
 	components: [
 		{classes: "view", components: [
@@ -16,7 +15,8 @@ enyo.kind({
 			{kind: "enyo.Button", classes: "destroy", ontap: "destroyItem"}
 		]},
 		{name: "edit", kind: "enyo.Input", classes: "edit", selectOnFocus: true,
-		    onblur: "stopEditing", onkeypress: "blurOnEnter", bindFrom: ".title", bindTo: ".value"}
+		    onblur: "stopEditing", onkeypress: "blurOnEnter", bindFrom: ".title",
+		    bindTo: ".value", bindOneWay: false}
 	],
 	setItemClass: enyo.Observer(function() {
 		this.addRemoveClass("completed", this.completed);
