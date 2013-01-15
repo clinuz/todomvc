@@ -1,6 +1,7 @@
 enyo.depends(
     "$lib/layout",
     "$lib/mvc",
+    "$lib/localstorage",
     "css",
     "models",
     "routers",

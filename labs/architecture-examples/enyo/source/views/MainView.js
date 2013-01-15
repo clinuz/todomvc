@@ -12,7 +12,7 @@ enyo.kind({
 		{tag: "label", attributes: {for: "toggle-all"}, content: "Mark all as complete"},
 		{
 			kind: "enyo.CollectionRepeater",
-			controller: "TodoMVC.TodoRepeaterController",
+			controller: "TodoMVC.todosController",
 			includeScroller: false,
 			tag: "ul",
 			id: "todo-list",
