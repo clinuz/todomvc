@@ -2,6 +2,7 @@ enyo.kind({
     name: "TodoMVC.Application",
     kind: "enyo.Application",
     view: "TodoMVC.AppView",
+    renderTarget: "#appView",
     autoStart: true,
     renderOnStart: true,
     controllers: [
