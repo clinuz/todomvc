@@ -38,7 +38,7 @@ enyo.kind({
         else return true;
         // the following would have worked with the same effect
         // and would appear simpler but less precise
-        // if (value) return false
-        // else return true
+        // if (value) return false;
+        // else return true;
 	}
 });
