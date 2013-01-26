@@ -13,7 +13,6 @@ enyo.kind({
 		{
 			kind: "enyo.CollectionRepeater",
 			controller: "TodoMVC.todosController",
-			includeScroller: false,
 			tag: "ul",
 			id: "todo-list",
 			components: [

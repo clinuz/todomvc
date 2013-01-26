@@ -3,6 +3,7 @@ enyo.kind({
 	kind: "enyo.View",
 	tag: "li",
 	completed: null,
+    controller: "TodoMVC.TodoController",
 	bindings: [
 		{from: ".controller.completed", to: ".completed"},
 		{from: ".controller.editing", to: ".editing"}

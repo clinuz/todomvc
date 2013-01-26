@@ -1,13 +1,13 @@
 enyo.kind({
     name: "TodoMVC.TodosController",
-    kind: "enyo.CollectionRepeaterController",
+    kind: "enyo.CollectionController",
     collection: "TodoMVC.todos",
     filter: "all",
     autoLoad: true,
     handlers: {
-        oncollectionadd: "didAdd",
-        onmodelchange: "didAdd",
-        oncollectionremove: "didRemove"
+        didadd: "didAdd",
+        didchange: "didChange",
+        didremove: "didRemove"
     },
     bindings: [
         {from: "TodoMVC.app.filter", to: ".filter"},
@@ -24,12 +24,24 @@ enyo.kind({
         return models;
     }, "filter", "models", "model"),
     didAdd: function (sender, event) {
-        var model = event.model;
-        model.save();
+        var models = event.values;
+        var model;
+        var idx;
+        for (idx in models) {
+            model = models[idx];
+            model.save();
+        }
+        this.inherited(arguments);
     },
-    didRemove: function (sender, event) {
-        var model = event.model;
-        model.destroy();
+    didChange: function (sender, event) {
+        var models = event.values;
+        var model;
+        var idx;
+        for (idx in models) {
+            model = models[idx];
+            model.save();
+        }
+        this.inherited(arguments);
     },
     active: enyo.Computed(function () {
         return this.collection.remaining().length;
@@ -50,5 +62,8 @@ enyo.kind({
     },
     clearCompleted: function() {
         this.collection.remove(this.collection.completed());
+    },
+    filterChanged: function () {
+        this.dispatchBubble("didreset", {}, this);
     }
 });

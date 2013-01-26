@@ -1,4 +1,6 @@
-enyo.ModelController.extend({
+enyo.kind({
+    name: "TodoMVC.TodoController",
+    kind: "enyo.ModelController",
     startEditing: function () {
         this.set("editing", true);
     },
@@ -6,6 +8,9 @@ enyo.ModelController.extend({
         this.set("editing", false);
     },
     destroyItem: function () {
-        this.model.destroy();
+        this.get("model").destroy();
+    },
+    completedChanged: function () {
+        this.log();
     }
 });
